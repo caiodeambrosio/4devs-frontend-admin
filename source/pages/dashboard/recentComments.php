@@ -15,7 +15,7 @@
     <ul class="products-list product-list-in-card pl-2 pr-2">
       <li class="item">
         <div class="product-img">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
         </div>
         <div class="product-info">
           <a href="javascript:void(0)" class="product-title">Empresa 1
@@ -28,7 +28,7 @@
       </li>
       <li class="item">
         <div class="product-img">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
         </div>
         <div class="product-info">
           <a href="javascript:void(0)" class="product-title">Empresa 2
@@ -41,7 +41,7 @@
       </li>
       <li class="item">
         <div class="product-img">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
         </div>
         <div class="product-info">
           <a href="javascript:void(0)" class="product-title">

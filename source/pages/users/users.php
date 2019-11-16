@@ -37,13 +37,13 @@ if(isset($_GET['delete'])){
                   class="badge <?php echo $users[$i]['status'] === 'INATIVO' ? 'bg-danger' : 'bg-warning' ?>"><?php echo $users[$i]['status']?></span>
               </td>
               <td>
-                <button id="open-modal" type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                <button id="edit-modal" type="button" class="open-modal btn btn-primary btn-sm" data-toggle="modal"
                   data-target="#modal-default" data-id="<?php echo $users[$i]['id'] ?>"
                   data-name="<?php echo $users[$i]['name'] ?>" data-lastname="<?php echo $users[$i]['lastname'] ?>"
                   data-email="<?php echo $users[$i]['email'] ?>" data-vat="<?php echo $users[$i]['vat'] ?>"
                   data-status="<?php echo $users[$i]['status'] ?>" data-password="<?php echo $users[$i]['password'] ?>"
                   data-modal-type="put">
-                  <i class="nav-icon fas fa-user-edit"></i>
+                  <i class="fas fa-user-edit"></i>
                 </button>
                 <?php echo deleteButton($users[$i]['id']) ?>
               </td>
