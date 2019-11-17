@@ -55,13 +55,12 @@
 </div>
 
 <script>
-$(document).on("click", "#open-modal", function() {
+$(document).on("click", ".open-modal", function() {
   const modal_type = $(this).data("modal-type");
   if (modal_type === 'post') {
     $("#modal-title").text("Novo Usuário")
   } else if (modal_type === 'put') {
     $("#modal-title").text("Editar Usuário")
-
     $("#id").val($(this).data("id"))
     $("#name").val($(this).data("name"))
     $("#lastname").val($(this).data("lastname"))

@@ -1,7 +1,5 @@
 <?php include './api/controllers/UserController.php'; ?>
 <?php include './source/pages/users/userModal.php'; ?>
-<?php include './source/shared/addButton.php'; ?>
-<?php include './source/shared/deleteButton.php'; ?>
 <?php $users = fetchUsers(); ?>
 <?php 
 if(isset($_GET['delete'])){
@@ -12,7 +10,11 @@ if(isset($_GET['delete'])){
   <section class="col-lg-12 connectedSortable">
     <div class="card">
       <div class="card-header">
-        <?php echo addButton() ?>
+        <button id="open-add-modal" type="button" class="open-modal btn btn-sm btn-success float-right"
+          data-toggle="modal" data-target="#modal-default" data-modal-type="post">
+          <i class="nav-icon fas fa-plus"></i>
+          Novo
+        </button>
       </div>
       <div class="card-body p-0">
         <table class="table table-striped">
@@ -37,7 +39,7 @@ if(isset($_GET['delete'])){
                   class="badge <?php echo $users[$i]['status'] === 'INATIVO' ? 'bg-danger' : 'bg-warning' ?>"><?php echo $users[$i]['status']?></span>
               </td>
               <td>
-                <button id="edit-modal" type="button" class="open-modal btn btn-primary btn-sm" data-toggle="modal"
+                <button type="button" class="open-modal btn btn-primary btn-sm" data-toggle="modal"
                   data-target="#modal-default" data-id="<?php echo $users[$i]['id'] ?>"
                   data-name="<?php echo $users[$i]['name'] ?>" data-lastname="<?php echo $users[$i]['lastname'] ?>"
                   data-email="<?php echo $users[$i]['email'] ?>" data-vat="<?php echo $users[$i]['vat'] ?>"
@@ -45,7 +47,10 @@ if(isset($_GET['delete'])){
                   data-modal-type="put">
                   <i class="fas fa-user-edit"></i>
                 </button>
-                <?php echo deleteButton($users[$i]['id']) ?>
+                <button id="open-delete-modal" type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                  data-target="#modal-delete" data-id="<?php echo $users[$i]['id'] ?>">
+                  <i class="nav-icon fas fa-trash"></i>
+                </button>
               </td>
             </tr>
             <?php
@@ -57,3 +62,4 @@ if(isset($_GET['delete'])){
     </div>
   </section>
 </div>
+<?php include './source/shared/deleteModal.php'; ?>

@@ -1,8 +1,8 @@
 <?php 
   if(isset($_POST['id']) && !empty($_POST['id'])){
-    updateUser($_POST);
+    updateCompany($_POST);
   }else if(isset($_POST['id']) && empty($_POST['id'])){
-    createUser($_POST);
+    createCompany($_POST);
   }
 ?>
 <div class="modal fade" id="modal-default">
@@ -14,32 +14,28 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="form" class="form-horizontal" method="post" action="">
+      <form id="form" method="post" action="">
         <div class="modal-body">
           <input id="id" name="id" class="form-control" type="hidden" />
           <div class="form-group">
             <label>Nome</label>
-            <input id="name" name="name" class="form-control" />
+            <input id="name" name="name" class="form-control" required />
           </div>
           <div class="form-group">
-            <label>Sobrenome</label>
-            <input id="lastname" name="lastname" class="form-control" />
+            <label>Descrição</label>
+            <input id="description" name="description" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>CNPJ</label>
+            <input id="inscription_number" name="inscription_number" class="form-control" required />
           </div>
           <div class="form-group">
             <label>E-mail</label>
-            <input id="email" name="email" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>CPF</label>
-            <input id="vat" name="vat" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Senha</label>
-            <input id="password" name="password" type="password" class="form-control" />
+            <input id="email" name="email" class="form-control" required />
           </div>
           <div class="form-group">
             <label>Status</label>
-            <select id="status" name="status" class="form-control">
+            <select id="status" name="status" class="form-control" required>
               <option value="ATIVO">Ativo</option>
               <option value="INATIVO">Inativo</option>
             </select>
@@ -58,17 +54,16 @@
 $(document).on("click", "#open-modal", function() {
   const modal_type = $(this).data("modal-type");
   if (modal_type === 'post') {
-    $("#modal-title").text("Novo Usuário")
+    $("#modal-title").text("Novo Empresa")
   } else if (modal_type === 'put') {
-    $("#modal-title").text("Editar Usuário")
+    $("#modal-title").text("Editar Empresa")
 
     $("#id").val($(this).data("id"))
     $("#name").val($(this).data("name"))
-    $("#lastname").val($(this).data("lastname"))
+    $("#description").val($(this).data("description"))
     $("#email").val($(this).data("email"))
-    $("#vat").val($(this).data("vat"))
+    $("#inscription_number").val($(this).data("subscription-number"))
     $("#status").val($(this).data("status"))
-    $("#password").val($(this).data("password"))
   }
 });
 

@@ -1,4 +1,4 @@
-<?php include './source/utils/enviroments.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/4devs/4devs-frontend-admin/'.'source/utils/enviroments.php'; ?>
 <?php 
   
   function call($method, $url, $data = array()){
