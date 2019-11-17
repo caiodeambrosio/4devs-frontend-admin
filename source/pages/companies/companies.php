@@ -1,4 +1,4 @@
-<?php include './api/controllers/CompanyController.php'; ?>
+<?php include './source/controllers/CompanyController.php'; ?>
 <?php include './source/pages/companies/companiesModal.php'; ?>
 <?php include './source/shared/deleteModal.php'; ?>
 <?php $companies = fetch(); ?>

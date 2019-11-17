@@ -3,6 +3,7 @@
     'dashboard' => 'Dashboard',
     'users' => 'Usuários',
     'companies' => 'Empresas',
+    'admins' => 'Administradores',
     'company_comments' => 'Empresa - Comentarios',
   );
 

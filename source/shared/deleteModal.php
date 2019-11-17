@@ -8,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="form" method="post" action="api/controllers/<?php echo $controller ?>.php">
+      <form id="form" method="post" action="source/controllers/<?php echo $controller ?>.php">
         <div class=" modal-body">
           <input id="delete_id" name="id" class="form-control" type="hidden" />
           <p>Este registro não poderá ser recuperado.</p>

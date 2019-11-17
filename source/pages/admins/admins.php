@@ -1,4 +1,4 @@
-<?php include './api/controllers/AdminController.php'; ?>
+<?php include './source/controllers/AdminController.php'; ?>
 <?php include './source/pages/admins/adminModal.php'; ?>
 <?php include './source/shared/deleteModal.php'; ?>
 <?php $admins = fetchAdmins(); ?>
@@ -43,7 +43,7 @@
                   data-email="<?php echo $admins[$i]['email'] ?>" data-vat="<?php echo $admins[$i]['vat'] ?>"
                   data-status="<?php echo $admins[$i]['status'] ?>"
                   data-password="<?php echo $admins[$i]['password'] ?>" data-modal-type="put">
-                  <i class="fas fa-admin-edit"></i>
+                  <i class="fas fa-user-edit"></i>
                 </button>
                 <button id="open-delete-modal" type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                   data-target="#modal-delete" data-id="<?php echo $admins[$i]['id'] ?>">

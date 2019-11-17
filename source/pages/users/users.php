@@ -1,4 +1,4 @@
-<?php include './api/controllers/UserController.php'; ?>
+<?php include './source/controllers/UserController.php'; ?>
 <?php include './source/pages/users/userModal.php'; ?>
 <?php include './source/shared/deleteModal.php'; ?>
 <?php $users = fetchUsers(); ?>

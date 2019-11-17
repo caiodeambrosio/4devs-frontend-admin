@@ -20,6 +20,9 @@
             case 'company_comments':
             include './source/pages/company_comments.php';
             break;
+            case 'admins':
+            include './source/pages/admins/admins.php';
+            break;
             default:
             include './source/pages/dashboard/dashboard.php';
             break;
