@@ -1,3 +1,4 @@
+<?php function delete_modal($controller){ ?>
 <div class="modal fade" id="modal-delete">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -7,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="form" method="post" action="api/controllers/CompanyController.php">
+      <form id="form" method="post" action="api/controllers/<?php echo $controller ?>.php">
         <div class=" modal-body">
           <input id="delete_id" name="id" class="form-control" type="hidden" />
           <p>Este registro não poderá ser recuperado.</p>
@@ -30,3 +31,4 @@ $("#modal-delete").on("hidden.bs.modal", function() {
   $(this).find('form').trigger('reset');
 })
 </script>
+<?php } ?>

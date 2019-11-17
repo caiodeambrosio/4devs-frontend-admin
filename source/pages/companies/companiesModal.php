@@ -1,10 +1,4 @@
-<?php 
-  if(isset($_POST['id']) && !empty($_POST['id'])){
-    updateCompany($_POST);
-  }else if(isset($_POST['id']) && empty($_POST['id'])){
-    createCompany($_POST);
-  }
-?>
+<?php function modal_save_and_update($controller){ ?>
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -14,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="form" method="post" action="">
+      <form id="form" method="post" action="api/controllers/<?php echo $controller ?>.php">
         <div class="modal-body">
           <input id="id" name="id" class="form-control" type="hidden" />
           <div class="form-group">
@@ -49,25 +43,4 @@
     </div>
   </div>
 </div>
-
-<script>
-$(document).on("click", "#open-modal", function() {
-  const modal_type = $(this).data("modal-type");
-  if (modal_type === 'post') {
-    $("#modal-title").text("Novo Empresa")
-  } else if (modal_type === 'put') {
-    $("#modal-title").text("Editar Empresa")
-
-    $("#id").val($(this).data("id"))
-    $("#name").val($(this).data("name"))
-    $("#description").val($(this).data("description"))
-    $("#email").val($(this).data("email"))
-    $("#inscription_number").val($(this).data("subscription-number"))
-    $("#status").val($(this).data("status"))
-  }
-});
-
-$("#modal-default").on("hidden.bs.modal", function() {
-  $(this).find('form').trigger('reset');
-})
-</script>
+<?php } ?>

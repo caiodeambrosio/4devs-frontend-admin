@@ -1,20 +1,19 @@
 <?php include './api/controllers/CompanyController.php'; ?>
 <?php include './source/pages/companies/companiesModal.php'; ?>
+<?php include './source/shared/deleteModal.php'; ?>
 <?php $companies = fetch(); ?>
-<?php 
-if(isset($_GET['delete'])){
-  // deleteCompany($_GET['delete']);
-} 
-?>
+
 <div class="row">
   <section class="col-lg-12 connectedSortable">
     <div class="card">
       <div class="card-header">
-        <button id="open-add-modal" type="button" class="open-modal btn btn-sm btn-success float-right"
-          data-toggle="modal" data-target="#modal-default" data-modal-type="post">
-          <i class="nav-icon fas fa-plus"></i>
-          Novo
-        </button>
+        <h2 class="m-0 text-dark">Empresas
+          <button id="open-add-modal" type="button" class="open-modal btn btn-sm btn-success float-right"
+            data-toggle="modal" data-target="#modal-default" data-modal-type="post">
+            <i class="nav-icon fas fa-plus"></i>
+            Novo
+          </button>
+        </h2>
       </div>
       <div class="card-body p-0">
         <table class="table table-striped">
@@ -65,4 +64,27 @@ if(isset($_GET['delete'])){
     </div>
   </section>
 </div>
-<?php include './source/shared/deleteModal.php'; ?>
+<?php modal_save_and_update('CompanyController'); ?>
+<?php delete_modal('CompanyController'); ?>
+
+<script>
+$(document).on("click", "#open-modal", function() {
+  const modal_type = $(this).data("modal-type");
+  if (modal_type === 'post') {
+    $("#modal-title").text("Novo Empresa")
+  } else if (modal_type === 'put') {
+    $("#modal-title").text("Editar Empresa")
+
+    $("#id").val($(this).data("id"))
+    $("#name").val($(this).data("name"))
+    $("#description").val($(this).data("description"))
+    $("#email").val($(this).data("email"))
+    $("#inscription_number").val($(this).data("subscription-number"))
+    $("#status").val($(this).data("status"))
+  }
+});
+
+$(".modal").on("hidden.bs.modal", function() {
+  $(this).find('form').trigger('reset');
+})
+</script>

@@ -1,6 +1,14 @@
-<?php include './api/request.php'; ?>
-
-<?php
+<?php include $_SERVER['DOCUMENT_ROOT'].'/4devs/4devs-frontend-admin/'.'api/request.php'; ?>
+<?php 
+  if($_POST){
+    if(isset($_POST['delete'])){
+      deleteUser($_POST);
+    } else if(isset($_POST['id']) && !empty($_POST['id'])){
+      updateUser($_POST);
+    }else if(isset($_POST['id']) && empty($_POST['id'])){
+      createUser($_POST);
+    }
+  } 
 
   function fetchUsers(){
     try {
@@ -16,28 +24,33 @@
 
   function createUser($data){
     try {
-      return call('POST', 'users', $data);
+      call('POST', 'users', $data);
     } catch (\Throwable $th) {
       print_r($th);
     }
-    
+    backToPage();
   }
 
   function updateUser($data){
     try {
-      return call('PUT', 'users/'.$data['id'], $data);
+      call('PUT', 'users/'.$data['id'], $data);
     } catch (\Throwable $th) {
       print_r($th);
     }
+    backToPage();
   }
 
-  function deleteUser($id){
+  function deleteUser($data){
     try {
-      return call('DELETE', 'users/'.$id);
-      window.location.replace("page name");
+      call('DELETE', 'users/'.$data['id']);
     } catch (\Throwable $th) {
-      // print_r($th);
+      print_r($th);
     }
+    backToPage();
   }
 
+  function backToPage(){
+    header('Location: http://localhost:81/4devs/4devs-frontend-admin/index.php?page=users');
+    exit();
+  }
 ?>

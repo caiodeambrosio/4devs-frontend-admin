@@ -39,9 +39,17 @@
         <li class="nav-item">
           <a href="index.php?page=companies"
             class="nav-link  <?php echo ($page === 'companies' || $page === 'company_comments') ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-user"></i>
+            <i class="nav-icon fas fa-building"></i>
             <p>
               Empresas
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?page=admins" class="nav-link <?php echo $page === 'admins' ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-address-card"></i>
+            <p>
+              Administradores
             </p>
           </a>
         </li>
