@@ -62,7 +62,7 @@
     
     session_start();
     if(!isset($response['error'])){
-      $_SESSION['user'] = $response;
+      $_SESSION['user_admin'] = $response;
       unset($_SESSION['login_error']);
     }else{
       $_SESSION['login_error'] = true;
@@ -73,7 +73,7 @@
   }
   function logout(){
     session_start();
-    unset($_SESSION['user']);
+    unset($_SESSION['user_admin']);
     header('Location: http://localhost:81/4devs/4devs-frontend-admin/index.php');
     exit();
   }
