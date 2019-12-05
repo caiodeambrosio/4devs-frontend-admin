@@ -4,6 +4,7 @@
 <?php include './source/shared/head.html'; ?>
 <?php include './source/shared/scripts.html'; ?>
 <?php 
+session_start();
 if(!isset($_SESSION['user_admin'])){
   include './source/pages/login.php';
 }else{

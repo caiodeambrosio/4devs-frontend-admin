@@ -55,7 +55,7 @@
 
   function login($data){
     try {
-      $response = call('POST', 'login', $data);
+      $response = call('POST', 'admins/login', $data);
     } catch (\Throwable $th) {
       print_r($th);
     }
