@@ -21,7 +21,7 @@
         "bootstrap-switch": "^3.4.0",
         "bootstrap4-duallistbox": "^4.0.1",
         "chart.js": "^2.8.0",
-        "datatables.net": "^1.10.19",
+        "datatables.net": "^1.10.22",
         "daterangepicker": "^3.0.5",
         "icheck-bootstrap": "^3.0.1",
         "inputmask": "^4.0.8",
